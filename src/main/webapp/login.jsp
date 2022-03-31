@@ -13,10 +13,21 @@
 </head>
 <body>
 
-<form action="LoginController" method="POST">
+<form action="loginValidate" method="POST">
     Enter username :<input type="text" name="username"> <br>
     Enter password :<input type="password" name="password"><br>
-    <input type="submit" value="Login">
+    <input type="submit" value="submit">
+
+    <div id="error">
+        <div>
+            <c:if test="${'error' != null}">
+                <h1>${error}</h1>
+                <!-- Show the error div with message-->
+            </c:if>
+        </div>
+    </div>
+
+
 </form>
 
 

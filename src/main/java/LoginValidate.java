@@ -16,9 +16,9 @@ public class LoginValidate extends HttpServlet {
             response.sendRedirect("profile.jsp");
         }
        else {
-           RequestDispatcher rd= request.getRequestDispatcher("login.jsp");
            request.setAttribute("error","Invalid Username or Password");
-           rd.include(request, response);
+           request.getRequestDispatcher("login.jsp").forward(request,response);
+
         }
 
     }

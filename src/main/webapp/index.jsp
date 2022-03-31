@@ -5,7 +5,7 @@
     <title><%= "some title" %></title>
 </head>
 <body>
-<%--<jsp:include page="partials/navbar.jsp"/>--%>
+<jsp:include page="partials/navbar.jsp"/>
 <div style="min-height: 50%">
 
 <%--    <c:if test="${home1}">--%>

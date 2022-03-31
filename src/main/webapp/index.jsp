@@ -5,11 +5,19 @@
     <title><%= "some title" %></title>
 </head>
 <body>
-    <c:if test="true">
-        <h1>Variable names should be very descriptive</h1>
+<%--<jsp:include page="partials/navbar.jsp"/>--%>
+<div style="min-height: 50%">
+
+<%--    <c:if test="${home1}">--%>
+<%--        <jsp:include page ="home.jsp"/>--%>
+<%--    </c:if>--%>
+    <c:if test="${login.jsp}">
+        <jsp:include page ="login.jsp"/>
     </c:if>
-    <c:if test="false">
-        <h1>single letter variable names are good</h1>
+    <c:if test="${profile.jsp}">
+        <jsp:include page ="register.jsp"/>
     </c:if>
+<%--    <jsp:include page="partials/footer.jsp"/>--%>
+</div>
 </body>
 </html>

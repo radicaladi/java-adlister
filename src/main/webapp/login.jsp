@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: adrian
@@ -7,10 +8,18 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+    <title>Title</title>
+</head>
+<body>
+
+<form action="LoginController" method="POST">
+    Enter username :<input type="text" name="username"> <br>
+    Enter password :<input type="password" name="password"><br>
+    <input type="submit" value="Login">
+</form>
+
+
+
+</body>
 </html>

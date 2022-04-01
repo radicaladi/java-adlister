@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "PickColor", urlPatterns = "/pickcolor")
+@WebServlet(name = "PickColorServlet", urlPatterns = "/pickcolor")
 public class PickColorServlet extends HttpServlet {
 
     protected void doGet (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -16,7 +16,7 @@ public class PickColorServlet extends HttpServlet {
         String color = request.getParameter("color-input");
 
         request.setAttribute("colorinput", color);
-        request.getRequestDispatcher("/viewcolor.jsp").forward(request, response);
+        response.sendRedirect("/viewcolor?colorinput=" + color);
     }
 
 }

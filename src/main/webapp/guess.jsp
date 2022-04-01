@@ -12,5 +12,20 @@
 </head>
 <body>
 
+<div>
+    <form method="post">
+    <label for="guess">Guess a number</label>
+    <input
+            type="text"
+            name="guess"
+            id="guess"
+            class="form-control"
+            placeholder="From 1-3..."
+            required
+    >
+    <input class="btn" type="submit" value="submit">
+    </form>
+</div>
+
 </body>
 </html>

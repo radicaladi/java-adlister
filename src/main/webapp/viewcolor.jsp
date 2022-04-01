@@ -9,8 +9,20 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        body {
+            background-color: ${colorinput};
+        }
+        div {
+            margin: 0 auto;
+            padding: 5em 0 0 0;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-
+<div>
+    <p>Your Color is: <span>${colorinput}</span></p>
+</div>
 </body>
 </html>

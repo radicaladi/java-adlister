@@ -15,7 +15,7 @@
 <div><h1>Build Your Pizza</h1></div>
 
 <div>
-    <form action="pizza-order.jsp" method="post">
+    <form action="${pageContext.request.contextPath}/pizza-order" method="post">
 <%--        crust--%>
         <div>
             <label class="title">Select Your Crust
@@ -23,18 +23,22 @@
                 <span class="required" aria-hidden="true">*</span>
 
             </label>
-            <select name="crust" aria-required="true">
+            <label>
+                <select name="crust" aria-required="true">
 
-                <option value="BK">Brooklyn</option>
+                    <option disabled selected></option>
 
-                <option value="GlutenF">Gluten Free</option>
+                    <option value="Brooklyn Style">Brooklyn Style</option>
 
-                <option value="Hand">Hand Tossed</option>
+                    <option value="Gluten Free">Gluten Free</option>
 
-                <option value="Thin">Thin</option>
+                    <option value="Hand Tossed">Hand Tossed</option>
 
-                <optgroup label=""></optgroup>
-            </select>
+                    <option value="Thin Crust">Thin Crust</option>
+
+                    <optgroup label=""></optgroup>
+                </select>
+            </label>
         </div>
 
 <%--        Sauce--%>
@@ -44,18 +48,22 @@
                 <span class="required" aria-hidden="true">*</span>
 
             </label>
-            <select name="sauce" aria-required="true">
+            <label>
+                <select name="sauce" aria-required="true">
 
-                <option value="Marinara">Marinara</option>
+                    <option disabled selected></option>
 
-                <option value="Garlic">Garlic Parmesan</option>
+                    <option value="Marinara">Marinara</option>
 
-                <option value="Barbecue">Barbecue</option>
+                    <option value="Garlic Parmesan">Garlic Parmesan</option>
 
-                <option value="Buffalo">Buffalo</option>
+                    <option value="Barbecue">Barbecue</option>
 
-                <optgroup label=""></optgroup>
-            </select>
+                    <option value="Buffalo">Buffalo</option>
+
+                    <optgroup label=""></optgroup>
+                </select>
+            </label>
         </div>
 
 <%--    size--%>
@@ -65,34 +73,38 @@
                 <span class="required" aria-hidden="true">*</span>
 
             </label>
-            <select name="size" aria-required="true">
+            <label>
+                <select name="size" aria-required="true">
 
-                <option value="Large">Large</option>
+                    <option disabled selected></option>
 
-                <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
 
-                <optgroup label=""></optgroup>
-            </select>
+                    <option value="Medium">Medium</option>
+
+                    <optgroup label=""></optgroup>
+                </select>
+            </label>
         </div>
 
 <%--    toppings--%>
         <div>
             <label class="title">Select Pizza Toppings</label><br>
-            <input type="checkbox" id="Pineapple" name="Pineapple" value="Pineapple">
+            <input type="checkbox" id="Pineapple" name="toppings" value="Pineapple">
             <label for="Pineapple"> Pineapple</label><br>
-            <input type="checkbox" id="Pepperoni" name="Pepperoni" value="Pepperoni">
+            <input type="checkbox" id="Pepperoni" name="toppings" value="Pepperoni">
             <label for="Pepperoni"> Pepperoni</label><br>
-            <input type="checkbox" id="Sausage" name="Sausage" value="Sausage">
+            <input type="checkbox" id="Sausage" name="toppings" value="Sausage">
             <label for="Sausage"> Sausage</label><br>
-            <input type="checkbox" id="Feta Cheese" name="Feta Cheese" value="Feta Cheese">
+            <input type="checkbox" id="Feta Cheese" name="toppings" value="Feta Cheese">
             <label for="Feta Cheese"> Feta Cheese</label><br>
-            <input type="checkbox" id="Olives" name="Olives" value="Olives">
-            <label for="Sausage"> Olives</label><br>
-            <input type="checkbox" id="Chives" name="Chives" value="Chives">
-            <label for="Sausage"> Chives</label><br>
-            <input type="checkbox" id="Green Pepper" name="Green Pepper" value="Green Pepper">
-            <label for="Sausage"> Green Peppers</label><br>
-            <input type="checkbox" id="Banana Pepper" name="Banana Pepper" value="Banana Pepper">
+            <input type="checkbox" id="Olives" name="toppings" value="Olives">
+            <label for="Olives"> Olives</label><br>
+            <input type="checkbox" id="Chives" name="toppings" value="Chives">
+            <label for="Chives"> Chives</label><br>
+            <input type="checkbox" id="Green Pepper" name="toppings" value="Green Pepper">
+            <label for="Green Pepper"> Green Peppers</label><br>
+            <input type="checkbox" id="Banana Pepper" name="toppings" value="Banana Pepper">
             <label for="Banana Pepper"> Banana Peppers</label><br><br>
         </div>
 
@@ -103,7 +115,14 @@
                 <span class="required" aria-hidden="true">*</span>
 
             </label><br>
-            <textarea class="field-element " id="address"></textarea>
+            <input
+                    type="text"
+                    name="address"
+                    id="address"
+                    class="form-control"
+                    placeholder="Enter Delivery Address and Name"
+                    required
+            >
         </div>
 
 

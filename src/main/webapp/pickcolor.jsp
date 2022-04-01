@@ -9,11 +9,21 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        div {
+            margin: 0 auto;
+            padding: 5em 0 0 0;
+            text-align: center;
+        }
+        label {
+            padding-bottom: 1em;
+        }
+    </style>
 </head>
 <body>
 
 <div>
-    <form action="${pageContext.request.contextPath}/" method="post">
+    <form action="${pageContext.request.contextPath}/pickcolor" method="post">
     <label for="color-input">Choose a Color</label><br>
     <input
             type="text"

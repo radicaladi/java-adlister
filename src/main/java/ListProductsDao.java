@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListProducts implements Products{
+public class ListProductsDao implements Products{
     private List<Product> products = new ArrayList<>();
 
-    public ListProducts(){
+    public ListProductsDao(){
         insert(new Product("BT Keyboard", 159.99));;
-        insert(new Product("Fancy mouse", 69.99);
+        insert(new Product("Fancy mouse", 69.99));
         insert(new Product("Webcam Cover", 2.99));
     }
 

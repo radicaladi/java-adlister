@@ -3,7 +3,7 @@ import java.io.Serializable;
 public class Quote implements Serializable {
     private long id;
     private String content;
-    private long author;
+    private Author author;
 
     public Quote () {};
 
@@ -23,11 +23,11 @@ public class Quote implements Serializable {
         this.content = content;
     }
 
-    public long getAuthor(){
+    public Author getAuthor(){
         return author;
     }
 
-    public void setAuthor(long author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 

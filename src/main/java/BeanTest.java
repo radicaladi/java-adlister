@@ -24,7 +24,7 @@ public class BeanTest {
         Quote author1Q = new Quote();
         author1Q.setId(3);
         author1Q.setContent("Clothes make the man. Naked people have little or no influence on society");
-        author1Q.setAuthor(2);
+        author1Q.setAuthor(author1);
         System.out.println("Mark Twain: " + author1Q.getContent());
 
 

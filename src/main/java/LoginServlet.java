@@ -25,11 +25,13 @@ public class LoginServlet extends HttpServlet {
         boolean loggedIn = username.equals("user") && password.equals("user1234");
 
         if (validAttempt) {
+            session.setAttribute("admin", username);
             session.setAttribute("isAdmin", true);
             session.setAttribute("isUser", false);
             response.sendRedirect("/profile");
         }
         else if (loggedIn) {
+            session.setAttribute("user", username);
             session.setAttribute("isUser", true);
             session.setAttribute("isAdmin", false);
             response.sendRedirect("/profile");

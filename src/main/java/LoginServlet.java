@@ -17,9 +17,17 @@ public class LoginServlet extends HttpServlet {
         boolean validAttempt = username.equals("admin") && password.equals("password");
         boolean loggedIn = username.equals("user") && password.equals("user1234");
 
-        if (validAttempt || loggedIn) {
+        if (validAttempt) {
+            request.getSession().setAttribute("isAdmin", true);
+            request.getSession().setAttribute("isUser", false);
             response.sendRedirect("/profile");
-        } else {
+        }
+        else if (loggedIn) {
+            request.getSession().setAttribute("isUser", true);
+            request.getSession().setAttribute("isAdmin", false);
+            response.sendRedirect("/profile");
+        }
+        else {
             response.sendRedirect("/login");
         }
     }

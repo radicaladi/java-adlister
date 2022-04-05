@@ -15,8 +15,9 @@ public class LoginServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         boolean validAttempt = username.equals("admin") && password.equals("password");
+        boolean loggedIn = username.equals("user") && password.equals("user1234");
 
-        if (validAttempt) {
+        if (validAttempt || loggedIn) {
             response.sendRedirect("/profile");
         } else {
             response.sendRedirect("/login");

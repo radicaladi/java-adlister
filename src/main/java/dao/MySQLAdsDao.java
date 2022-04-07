@@ -1,6 +1,7 @@
 package dao;
-
+import java.sql.DriverManager;
 import com.mysql.cj.jdbc.Driver;
+import jdbc.Config;
 import models.Ad;
 
 import java.sql.*;
@@ -10,7 +11,7 @@ import java.util.List;
 public class MySQLAdsDao implements Ads {
     private Connection connection = null;
 
-    public MySQLAdsDao() {
+    public MySQLAdsDao(Config config) {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
